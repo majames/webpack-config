@@ -11,7 +11,7 @@ module.exports = {
   ],
 
   output: {
-    path: __dirname,
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/dist/'
   },
@@ -20,12 +20,19 @@ module.exports = {
 
   module: {
     loaders: [
-
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
+      }
     ]
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(), // live reload page without losing state of app
     new webpack.optimize.DedupePlugin(), // search for equal/similar files and deduplicate them out
     new webpack.NoErrorsPlugin() // avoid emitting files when an error occurs
   ]

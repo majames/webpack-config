@@ -10,10 +10,14 @@
   "author": "Michael James",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.1.2",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.2",
     "webpack": "^1.12.3",
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
-    "lodash": "^3.10.1"
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
   }
 }

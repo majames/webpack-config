@@ -1,4 +1,9 @@
 
-const _ = require('lodash');
+const $ = require('jquery');
 
-document.getElementsByTagName('body')[0].innerHTML = 'Hello Michael';
+import { MyMath } from './utils';
+
+document.getElementsByTagName('body')[0].innerHTML = `Hi Michael!
+  Would you like some ${MyMath.PI}?`;
+
+debugger;
